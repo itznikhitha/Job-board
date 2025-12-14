@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Employer Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <h1>Employer Dashboard</h1>
+
+  <!-- Account -->
+  <div class="card">
+    <h2>Account</h2>
+    <p><strong>Company:</strong> ABC Tech</p>
+    <p><strong>Email:</strong> hr@abctech.com</p>
+  </div>
+
+  <!-- Post Job -->
+  <div class="card">
+    <h2>Post a Job</h2>
+
+    <form onsubmit="postJob(event)">
+      <input type="text" placeholder="Job Title" required>
+      <input type="text" placeholder="Location" required>
+      <button type="submit">Post Job</button>
+    </form>
+
+    <p id="jobMsg" style="display:none; color:green; margin-top:10px;">
+      ✅ Job posted successfully!
+    </p>
+  </div>
+
+</div>
+
+<script>
+function postJob(event) {
+  event.preventDefault();
+  document.getElementById("jobMsg").style.display = "block";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Job Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===== TOP NAVBAR ===== -->
+<nav class="navbar">
+
+    <div class="nav-left">
+        <div class="logo-circle">🔍</div>
+        <div class="logo-text">
+            <strong>Job Board</strong>
+            <small>Find your dream job</small>
+        </div>
+    </div>
+    
+
+    <ul class="nav-center">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Browse Job</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <a href="login.html" class="login-btn">Log in</a>
+        <a href="post-job.html" class="post-job-btn">Post A Job</a>
+    </div>
+
+</nav>
+<div class:"hero-wrapper">
+    <div class="container">
+
+    <!-- LEFT TEXT -->
+    <div class="left">
+        <p class="jobs-count">4536+ Jobs listed</p>
+
+        <h1 class="title">
+            Find your Dream Job</h1>
+
+        <p class="subtitle">
+            We help you find the perfect job that matches your skills and passion.
+        </p>
+
+        <div class="btn-group">
+            <a href="upload-resume.html" class="upload-btn">Upload Resume</a>
+            <a href="jobs.html" class="find">Find Jobs</a>
+        </div>
+    </div>
+
+    <!-- RIGHT IMAGE (your existing image stays) -->
+    <div class="right">
+        <img src="assets/job.png" alt="Job image">
+    </div>
+
+
+</div>
+<!-- ===== SEARCH BAR ===== -->
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search keyword">
+    <input type="text" placeholder="Location">
+    <select>
+        <option>Category</option>
+        <option>IT</option>
+        <option>Design</option>
+        <option>Marketing</option>
+    </select>
+    <button type="button" class="search-btn" onclick="searchJobs()">Find Job</button>
+</div>
+</div>
+
+
+<script>
+  function searchJobs() {
+    const keyword = document.getElementById("searchInput").value;
+    window.location.href = "jobs.html?search=" + encodeURIComponent(keyword);
+  }
+</script>
+</body>
+</html>

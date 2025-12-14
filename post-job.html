@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Post a Job</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="job-form-container">
+    <h2>Post a Job</h2>
+
+    <form id="postJobForm">
+      <label>Job Title</label>
+      <input type="text" required>
+
+      <label>Company Name</label>
+      <input type="text" required>
+
+      <label>Location</label>
+      <input type="text" required>
+
+      <label>Job Type</label>
+      <select>
+        <option>Full Time</option>
+        <option>Internship</option>
+        <option>Part Time</option>
+      </select>
+
+      <label>Experience</label>
+      <input type="text">
+
+      <label>Salary</label>
+      <input type="text">
+
+      <label>Job Description</label>
+      <textarea rows="4"></textarea>
+
+      <label>Skills Required</label>
+      <input type="text">
+
+      <button type="submit" class="submit-btn">Post Job</button>
+    </form>
+
+    <p id="successMsg" class="success-msg">Job Posted Successfully ✅</p>
+  </div>
+
+<script>
+  const form = document.getElementById("postJobForm");
+  const msg = document.getElementById("successMsg");
+
+  msg.style.display = "none";
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    msg.style.display = "block";
+    form.reset();
+  });
+</script>
+
+</body>
+</html>

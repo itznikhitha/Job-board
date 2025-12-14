@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Job Listings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="jobs-page">
+
+    <h1>Available Jobs</h1>
+
+    <div class="job-card" data-title="frontend developer">
+
+      <h3>Frontend Developer</h3>
+      <p>Location: Bangalore</p>
+      <p>Experience: 0–2 years</p>
+      <a href="job-details.html" class="apply-link">
+  <button>Apply</button>
+</a>
+    </div>
+
+    <div class="job-card" data-title="backend developer">
+
+      <h3>Backend Developer</h3>
+      <p>Location: Chennai</p>
+      <p>Experience: 1–3 years</p>
+      <a href="backend-details.html" class="apply-link">
+  <button>Apply</button>
+</a>
+    </div>
+
+    <div class="job-card" data-title="ui ux developer">
+      <h3>UI/UX Designer</h3>
+      <p>Location: Remote</p>
+      <p>Experience: Fresher</p>
+      <a href="ux-details.html" class="apply-link">
+  <button>Apply</button>
+</a>
+    </div>
+
+  </div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const search = params.get("search");
+
+  if (search) {
+    const jobs = document.querySelectorAll(".job-card");
+
+    jobs.forEach(job => {
+      const title = job.getAttribute("data-title");
+
+      if (!title.includes(search.toLowerCase())) {
+        job.style.display = "none";
+      }
+    });
+  }
+</script>
+</body>
+</html>

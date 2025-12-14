@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Upload Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="upload-container">
+    <h2>Upload Your Resume</h2>
+
+    <input type="file" id="resumeInput" accept=".pdf,.doc,.docx">
+
+    <button onclick="uploadResume()">Upload Resume</button>
+
+    <p id="successMsg" class="success-msg">
+      ✅ Resume uploaded successfully!
+    </p>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
+    function uploadResume() {
+      const file = document.getElementById("resumeInput").files[0];
+      const msg = document.getElementById("successMsg");
+
+      if (!file) {
+        alert("Please select a resume file first");
+        return;
+      }
+
+      msg.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

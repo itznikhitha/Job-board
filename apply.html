@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Job Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="application-page">
+
+  <h1>Job Application Form</h1>
+
+  <form class="application-form" onsubmit="submitApplication(event)">
+
+    <label>Full Name</label>
+    <input type="text" placeholder="Enter your name" required>
+
+    <label>Email Address</label>
+    <input type="email" placeholder="Enter your email" required>
+
+    <label>Phone Number</label>
+    <input type="tel" placeholder="Enter your phone number" required>
+
+    <label>Upload Resume</label>
+    <input type="file" required>
+
+    <button type="submit" class="submit-btn">Submit Application</button>
+
+    <p id="successMsg" style="display:none; color:green; margin-top:10px;">
+      ✅ Application submitted successfully!
+    </p>
+
+    <p id="emailMsg" style="display:none; color:#1e7e34;">
+      📧 Confirmation email has been sent to your email.
+    </p>
+    <a id="dashBtn" href="candidate-dashboard.html"
+   style="display:none; margin-top:10px; color:#041d43; font-weight:600;">
+  Go to Dashboard →
+</a>
+
+  </form>
+
+  <a href="jobs.html" class="back-link">← Back to Jobs</a>
+
+</div>
+
+<script>
+function submitApplication(event) {
+  event.preventDefault();
+  document.getElementById("successMsg").style.display = "block";
+  
+  document.getElementById( "emailMsg").style.display = "block";
+  document.getElementById ("dashBtn").style.display = "inline-block";
+}
+</script>
+
+</body>
+</html>
